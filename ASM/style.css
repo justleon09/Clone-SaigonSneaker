@@ -1,0 +1,49 @@
+.wrapper-all {
+  max-width: 1660px;
+  margin: 0 auto;
+}
+
+.body-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.cart-body {
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.news {
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+a {
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+.num-page a {
+  color: black;
+}
+
+.num-page span {
+  color: black;
+}
+
+.footer-wrapper {
+  height: 400px;
+}
+
+.footer-info {
+  color: white;
+}
+.footer-info .footer2 a {
+  color: white;
+}
+.footer-info .footer2 dd :hover {
+  color: crimson;
+}

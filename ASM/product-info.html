@@ -1,0 +1,376 @@
+<!-- body -->
+<div class="wrapper-all">
+  <div class="body-wrapper">
+    <div class="body-title my-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a
+              href="#!home"
+              class="text-decoration-none"
+              style="color: darkgray; font-size: 16px"
+              >Trang chủ</a
+            >
+          </li>
+          <li class="breadcrumb-item">
+            <a
+              href="#!list"
+              class="text-decoration-none"
+              style="color: darkgray; font-size: 16px"
+              >Sneaker</a
+            >
+          </li>
+          <li class="breadcrumb-item">
+            <a
+              href="#!list"
+              class="text-decoration-none"
+              style="color: darkgray; font-size: 16px"
+              >Adidas</a
+            >
+          </li>
+          <li
+            class="breadcrumb-item active fw-semibold"
+            style="color: black"
+            aria-current="page"
+          >
+            {{list.name}}
+          </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class=""></div>
+      <div class="col-5">
+        <div class="slider mt-0">
+          <div
+            id="carouselExampleAutoplaying"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="3000">
+                <img
+                  src="{{list.image[0]}}"
+                  class="d-block w-100 h-100 object-fit-cover rounded"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img
+                  src="{{list.image[1]}}"
+                  class="d-block w-100 rounded"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img
+                  src="{{list.image[2]}}"
+                  class="d-block w-100 rounded"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img
+                  src="{{list.image[3]}}"
+                  class="d-block w-100 rounded"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center">
+          <img
+            class="img-thumbnail p-0 my-3 me-2"
+            style="width: 110px"
+            src="{{list.image[0]}}"
+          />
+          <img
+            class="img-thumbnail p-0 my-3 me-2"
+            style="width: 110px"
+            src="{{list.image[1]}}"
+          />
+          <img
+            class="img-thumbnail p-0 my-3 me-2"
+            style="width: 110px"
+            src="{{list.image[2]}}"
+          />
+          <img
+            class="img-thumbnail p-0 my-3 me-2"
+            style="width: 110px"
+            src="{{list.image[3]}}"
+          />
+        </div>
+      </div>
+      <div class="col-7 mt-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-10">
+              <div class="container m-2">
+                <h3 class="fw-bolder">{{list.name}}</h3>
+                <span>
+                  <i class="fw-bolder fs-4"
+                    ><span>{{list.price | number}}đ</span></i
+                  >
+                </span>
+              </div>
+            </div>
+            <div class="col-2">
+              <a href="#"
+                ><img
+                  class="img-thumbnail m-1"
+                  src="{{list.logo}}"
+                  style="width: 110px"
+              /></a>
+            </div>
+          </div>
+          <div class="product-infos">
+            <p class="m-3 fw-semibold fs-5 text-secondary">{{list.about}}</p>
+          </div>
+
+          <div class="product-size d-flex ms-3 my-5">
+            <h5 class="fw-bolder mt-1">Size:</h5>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">36</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">37</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">38</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">39</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">40</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">41</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">42</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">43</button>
+            <button class="btn btn-outline-dark px-2 py-1 ms-2">44</button>
+          </div>
+          <div class="product-addcart">
+            <button
+              type="button"
+              class="btn btn-dark btn-lg fw-bolder w-50"
+              ng-click="buy(list)"
+            >
+              THÊM VÀO GIỎ HÀNG
+            </button>
+          </div>
+
+          <div class="product-about-shipping">
+            <div class="pas-body m-2">
+              <ul class="p-0 mt-5">
+                <dd>
+                  <h5 class="fs-5">
+                    <i class="fa-brands fa-free-code-camp"></i> Miễn phí vận
+                    chuyển toàn quốc cho đơn hàng trên 1tr.
+                  </h5>
+                </dd>
+                <dd>
+                  <h5 class="fs-5">
+                    <i class="fa-solid fa-bolt"></i> Giao nhanh 2h trong nội
+                    thành HCM.
+                  </h5>
+                </dd>
+                <dd>
+                  <h5 class="fs-5">
+                    <i class="fa-solid fa-truck-fast"></i> Thời gian vận chuyển
+                    trung bình 3-4 ngày.
+                  </h5>
+                </dd>
+              </ul>
+            </div>
+          </div>
+
+          <div class="product-about-complain">
+            <div
+              class="accordion accordion-flush my-5"
+              id="accordionFlushExample"
+            >
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bolder"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Mô Tả
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="container">{{list.about}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bolder"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    Chi Tiết
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="row fw-bolder fs-6">
+                      <div class="col-6"><p>Size</p></div>
+                      <div class="col-6 text-end">
+                        <p>36-37-38-39-40-41-42-43-44</p>
+                      </div>
+                      <hr />
+                      <div class="col-6"><p>Loại sản phẩm</p></div>
+                      <div class="col-6 text-end"><p>{{list.category}}</p></div>
+                      <hr />
+                      <div class="col-6"><p>Mức giá</p></div>
+                      <div class="col-6 text-end"><p>1tr - 2tr</p></div>
+                      <hr />
+                      <div class="col-6"><p>Thương hiệu</p></div>
+                      <div class="col-6 text-end"><p>{{list.brand}}</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bolder"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    Đánh Giá
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    Lê Thành Tôn <br />PS27116 <br />SD18202
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="another-product mt-4 mb-5">
+      <div class="container">
+        <h5 class="fs-4 fw-bolder">SẢN PHẨM TƯƠNG TỰ</h5>
+        <hr />
+      </div>
+      <div class="d-flex flex-wrap mt-3 mb-2 rounded justify-content-center">
+        <div
+          class="border border-black rounded mx-1"
+          ng-repeat="p in products | limitTo : 5 : 4"
+          style="width: 230px"
+        >
+          <a href="#!info/{{p.name}}">
+            <img
+              class="img-fluid rounded-top"
+              style="width: 100%"
+              src="{{p.image[0]}}"
+            />
+          </a>
+          <div class="container my-2 d-flex flex-column">
+            <p class="m-0">
+              <a href="#!info/{{p.name}}" class="link-underline-light"
+                >{{p.name}}</a
+              >
+            </p>
+            <strong
+              ><a href="#!info/{{p.name}}" class="link-underline-light"
+                >{{p.brand}}</a
+              ></strong
+            >
+            <span>
+              <i class="fw-bolder"><span>{{p.price | number}}đ</span></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<div class="container bg-light">
+  <hr class="border-2" />
+  <div class="row mx-5">
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-truck-fast fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">SHIP COD TOÀN QUỐC</h5>
+        <p>Miễn phí vận chuyển toàn quốc cho đơn hàng từ 999.000đ.</p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-user-check fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">CHẤT LƯỢNG TUYỆT ĐỐI 100%</h5>
+        <p>
+          Cam kết sản phẩm chính hãng đến từ New Balance, Vans, Converse,...
+        </p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-wallet fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">THANH TOÁN DỄ DÀNG</h5>
+        <p>Phương thức thanh toán đa dạng và cực kì tiện lợi.</p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-clock-rotate-left fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">TIẾT KIỆM THỜI GIAN</h5>
+        <p>Mua sắm dễ hơn khi Online.</p>
+      </div>
+    </div>
+  </div>
+</div>

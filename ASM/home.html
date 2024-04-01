@@ -1,0 +1,284 @@
+<div class="wrapper-all">
+  <div class="slider mt-0 border-bottom border-black border-2">
+    <div
+      id="carouselExampleAutoplaying"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img
+            src="imgs/slider1.jpg"
+            class="d-block w-100 h-100 object-fit-cover"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="imgs/slider2.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="imgs/slider3.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="imgs/slider4.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="imgs/slider5.jpg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="body-wrapper bg-light">
+    <div class="container mt-5">
+      <h4 class="fs-3 fw-bolder">NỔI BẬT</h4>
+      <hr />
+      <!-- ngay day -->
+      <div class="d-flex flex-wrap justify-content-center">
+        <div
+          class="border border-black rounded m-1"
+          ng-repeat="p in products | limitTo : 8 : 7  track by $index "
+          style="width: 250px; height: 370px"
+        >
+          <a href="#!info/{{p.name}}">
+            <img class="rounded-top" src="{{p.image[0]}}" style="width: 100%" />
+          </a>
+          <div class="container my-2 d-flex flex-column">
+            <p class="m-0">
+              <a
+                href="#!info/{{p.name}}"
+                class="text-decoration-none text-start"
+                >{{p.name}}</a
+              >
+            </p>
+            <strong
+              ><a href="#!list" class="text-decoration-none">
+                {{p.brand}}
+              </a></strong
+            >
+            <span>
+              <i class="fw-bolder"><span>{{p.price | number}}đ</span></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h4 class="fs-3 fw-bolder">XEM THÊM HÀNG MỚI VỀ</h4>
+    <hr />
+    <div class="d-flex flex-wrap justify-content-center">
+      <div
+        class="border border-black rounded m-1"
+        ng-repeat="p in products |    track by $index "
+        style="width: 250px; height: 370px"
+      >
+        <a href="#!info/{{p.name}}">
+          <img class="rounded-top" src="{{p.image[0]}}" style="width: 100%" />
+        </a>
+        <div class="container my-2 d-flex flex-column">
+          <p class="m-0">
+            <a href="#!info/{{p.name}}" class="text-decoration-none text-start"
+              >{{p.name}}</a
+            >
+          </p>
+          <strong
+            ><a href="#!list" class="text-decoration-none">
+              {{p.brand}}
+            </a></strong
+          >
+          <span>
+            <i class="fw-bolder"><span>{{p.price | number}}đ</span></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news">
+  <div class="body-banner-news mt-5">
+    <div class="d-flex">
+      <div class="images">
+        <img class="img-fluid" src="imgs/banner_product_info.jpg" alt="" />
+      </div>
+      <div class="mx-5">
+        <div class="container">
+          <h2 class="my-4">VANS X KNU SKOOL</h2>
+          <p>
+            Vans đem phong cách trượt ván những năm 90 của thế kỷ trước trở lại
+            làm tiền đề cho xu hướng thời trang giày “Puffy” mới với tên gọi The
+            Knu Skool. Trong đợt này, ra mắt hàng loạt các phối màu phù hợp với
+            thiết kế cổ điển của Knu Skool. Ba màu sắc được giới thiệu ở Việt
+            Nam gồm đỏ, đen và xanh, đều mix cùng dải logo Old Skool Sidestripe™
+            kinh điển phiên bản 3D tại hai bên hông tăng thêm cảm giác “puffy -
+            mụp mụp” thường thấy ở loại “giày bánh mì”, đồng thời cũng đem lại
+            sự cân bằng về thị giác trên tổng thể sản phẩm. Là một item low top,
+            mũi giày làm từ da lộn bền bỉ, lưỡi giày cùng những đặc điểm khác
+            đều được phóng to và dày lên làm tăng sự êm ái cho trải nghiệm người
+            dùng, đặc biệt logo Old Skool phiên bản 3D-molded Sidestripe™ mang
+            lại một đặc điểm nhận dạng không thể nhầm lẫn của Knu Skool.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-vans m-5">
+    <div class="d-flex flex-wrap mt-3 mb-2 rounded">
+      <div
+        class="border border-black rounded mx-1"
+        ng-repeat="p in products | limitTo : 4 : 25  track by $index "
+        style="width: 260px; height: 380px"
+      >
+        <a href="#!info/{{p.name}}">
+          <img
+            class="img-fluid rounded-top"
+            src=" {{p.image[0]}} "
+            style="width: 100%"
+          />
+        </a>
+        <div class="container my-2 d-flex flex-column">
+          <p class="m-0">
+            <a href="#!info/{{p.name}}" class="text-decoration-none"
+              >{{p.name}}</a
+            >
+          </p>
+          <strong
+            ><a href="#!list" class="link-underline link-underline-opacity-0"
+              >{{p.brand}}</a
+            ></strong
+          >
+          <span>
+            <i class="fw-bolder"><span>{{p.price | number}}đ</span></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-banner-news mt-5">
+    <div class="d-flex">
+      <div class="mx-5">
+        <div class="container">
+          <h2 class="my-4">VANS SLIDE-ON VR3CUSH</h2>
+          <p>
+            Bộ Slide-On VR3Cush dành riêng cho phái nữ có cấu trúc nguyên khối
+            mới lạ từ Vans. Item mô phỏng lại hình bóng cổ điển của dòng sandal
+            với cấu trúc đặc nguyên khối độc lạ, đặc biệt được làm từ những vật
+            liệu và kỹ thuật chuyên nghiệp hơn. Để tạo ra sự thoải mái nhất cho
+            người sử dụng cùng kết hợp với phong cách hiện đại, bản tái tạo này
+            chú trọng đến tính bền vững từ cảm hứng đặc trưng Off The Wall. Đôi
+            dép Slide-On VR3Cush này sẽ đáp ứng được nhu cầu của bạn! Để ý item
+            có logo quả địa cầu VR3 Checkerboard, có nghĩa sản phẩm phải được sử
+            dụng ít nhất 30% từ một hoặc kết hợp các vật liệu tái chế, tái tạo
+            và/hoặc có thể tái tạo, điều này giúp bảo vệ môi trường, giảm thiểu
+            những nguy cơ phá hủy môi trường từ ngành công nghiệp thời trang.
+            Thiết kế: Cấu trúc nguyên khối, phần gót được đúc hình vòm để mang
+            lại sự thoải mái và hỗ trợ người dùng tối đa. Chân: Đệm chân
+            VR3Cush™ mới được sản xuất bằng cách sử dụng ít nhất 50% bọt EVA
+            sinh học có nguồn gốc một phần từ thực vật theo tiêu chuẩn thử
+            nghiệm ASTM D6866-16.
+          </p>
+        </div>
+      </div>
+      <div class="images">
+        <img class="img-fluid" src="imgs/banner_product_dep.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="product-vans m-5">
+    <div class="d-flex flex-wrap mt-3 mb-2 rounded justify-content-center">
+      <div
+        class="border border-black rounded mx-1"
+        ng-repeat="p in products | limitTo : 3 : 35  track by $index "
+        style="width: 300px; height: 420px"
+      >
+        <a href="#!info/{{p.name}}">
+          <img
+            class="img-fluid rounded-top"
+            src=" {{p.image[0]}} "
+            style="width: 100%"
+          />
+        </a>
+        <div class="container my-2 d-flex flex-column">
+          <p class="m-0">
+            <a href="#!info/{{p.name}}" class="text-decoration-none"
+              >{{p.name}}</a
+            >
+          </p>
+          <strong
+            ><a href="#!list" class="link-underline link-underline-opacity-0"
+              >{{p.brand}}</a
+            ></strong
+          >
+          <span>
+            <i class="fw-bolder"><span>{{p.price | number}}đ</span></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container bg-light">
+  <hr class="border-2" />
+  <div class="row mx-5">
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-truck-fast fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">SHIP COD TOÀN QUỐC</h5>
+        <p>Miễn phí vận chuyển toàn quốc cho đơn hàng từ 999.000đ.</p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-user-check fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">CHẤT LƯỢNG TUYỆT ĐỐI 100%</h5>
+        <p>
+          Cam kết sản phẩm chính hãng đến từ New Balance, Vans, Converse,...
+        </p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-wallet fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">THANH TOÁN DỄ DÀNG</h5>
+        <p>Phương thức thanh toán đa dạng và cực kì tiện lợi.</p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-clock-rotate-left fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">TIẾT KIỆM THỜI GIAN</h5>
+        <p>Mua sắm dễ hơn khi Online.</p>
+      </div>
+    </div>
+  </div>
+</div>

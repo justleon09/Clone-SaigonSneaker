@@ -1,0 +1,127 @@
+<div class="cart-body">
+  <div class="container d-flex justify-content-center my-5">
+    <nav style="--bs-breadcrumb-divider: '->' " aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li
+          class="breadcrumb-item fw-bolder fs-4"
+          style="color: black"
+          aria-current="page"
+        >
+          <a href="#!cart/:id">SHOPPING CART</a>
+        </li>
+        <li
+          class="breadcrumb-item active fw-bolder fs-4"
+          style="color: black"
+          aria-current="page"
+        >
+          <a href="#!checkout" class="text-decoration-none">CHECK OUT</a>
+        </li>
+        <li
+          class="breadcrumb-item active fw-bolder fs-4"
+          style="color: black"
+          aria-current="page"
+        >
+          <a href="#!home" class="text-decoration-none">ORDER COMPLETE</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container d-block text-center">
+      <table class="table">
+        <thead>
+            <tr >
+                <th scope="col">STT</th>
+                <th scope="col"></th>
+                <th scope="col">Tên Sản Phẩm</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Số Lượng</th>
+                <th scope="col">Thành Tiền</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr ng-repeat="item in carts track by $index">
+                <td class="align-middle">{{$index+1}}</td>
+                <td class="align-middle"><img src="{{item.list.image[0]}}" style="width: 80px;"></td>
+                <td class="align-middle">{{item.list.name}}</td>
+                <td class="align-middle">{{item.list.price | number}}đ</td>
+                <td class="align-middle">
+                    <input type="number" ng-model="item.quantity" min="1" max="10" style="width: 60px;">
+                </td>
+                <td class="align-middle">{{item.quantity * item.list.price |number}} VNĐ</td>
+                <td class="align-middle">
+                    <button class="btn btn-dark" ng-click="remove(item.prod.id)">X</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+              <tr>
+                <th></th>
+                  <th colspan="4">TỔNG</th>
+                  <th>{{totalCart() | number}} VNĐ</th>
+                  <th>
+                      <button button class="btn btn-outline-dark" ng-click="clear()">Clear</button>
+                  </th>
+              </tr>
+          </tfoot>
+    </table>
+    <a
+      href="#!checkout"
+      class="btn btn-dark btn-lg fw-bolder w-25 my-5"
+      role="button"
+      >TIẾN HÀNH THANH TOÁN </a
+    >
+  </div>
+</div>
+<div class="back-home d-flex justify-content-center">
+  <a
+      href="#!home"
+      class="btn btn-outline-dark btn-lg fw-bolder mb-3"
+      role="button"
+      >QUAY LẠI TRANG CHỦ</a
+    >
+</div>
+
+<div class="container bg-light">
+  <hr class="border-2" />
+  <div class="row mx-5">
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-truck-fast fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">SHIP COD TOÀN QUỐC</h5>
+        <p>Miễn phí vận chuyển toàn quốc cho đơn hàng từ 999.000đ.</p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-user-check fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">CHẤT LƯỢNG TUYỆT ĐỐI 100%</h5>
+        <p>
+          Cam kết sản phẩm chính hãng đến từ New Balance, Vans, Converse,...
+        </p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-wallet fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">THANH TOÁN DỄ DÀNG</h5>
+        <p>Phương thức thanh toán đa dạng và cực kì tiện lợi.</p>
+      </div>
+    </div>
+    <div class="col-3 row">
+      <div class="col-2 mt-2">
+        <i class="fa-solid fa-clock-rotate-left fs-2"></i>
+      </div>
+      <div class="col-10">
+        <h5 class="fw-bolder">TIẾT KIỆM THỜI GIAN</h5>
+        <p>Mua sắm dễ hơn khi Online.</p>
+      </div>
+    </div>
+  </div>
+</div>
